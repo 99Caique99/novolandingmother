@@ -35,18 +35,21 @@
                 <h1>🌟 Espaço MotivaAção – Transformando Aprendizagens! 🌟</h1>
                 <p> Aprender pode ser mais leve e prazeroso! <br> Agende uma avaliação e dê um novo rumo ao desenvolvimento do seu filho.</p>
                 
-                    <form id="contact-form">
-                        <label for="name">Nome Completo:</label>
-                        <input type="text" id="name" name="name" required>
-                        
-                        <label for="phone">Telefone:</label>
-                        <input type="tel" id="phone" name="phone" required>
-                        
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
-                        
-                        <button type="submit">Enviar</button>
-                    </form>
+                <form id="contact-form" name="contato" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contato"> <!-- Necessário para o Netlify -->
+                    
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" id="name" name="nome" required>
+                    
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" name="telefone" required>
+                    
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <button type="submit">Enviar</button>
+                </form>
+                
                 <a href="https://wa.me/5521968065794" class="btn-whatsapp">Agende sua consulta</a>
             </div>
             <div class="intro-image">
@@ -154,4 +157,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-<
