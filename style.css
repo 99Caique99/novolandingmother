@@ -31,7 +31,7 @@ p {
     padding: 15px 0;
     text-align: center;
     z-index: 10;
-}
+}   
 
 .menu-content h1 a {
     color: white;
@@ -54,7 +54,61 @@ p {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
+}/* Estilização do formulário de contato */
+#contact-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto; /* Centraliza o formulário */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+#contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+    width: 100%;
+    text-align: left;
+}
+
+#contact-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+#contact-form input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#contact-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#contact-form button:hover {
+    background: #0056b3;
+}
+
 
 .intro-image{border-radius: 50%;}
 #intro{    background: url(https://images.pexels.com/photos/8385738/pexels-photo-8385738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);}
@@ -89,7 +143,7 @@ p {
 }
 
 .intro-text h2 {
-    font-size: 2.5rem;
+    font-size: 0.5 rem;
     margin-bottom: 20px;
     color: #069898;
 }
@@ -144,6 +198,8 @@ p {
     color: #333;
     margin-bottom: 20px;
 }
+#historia{background: url(https://th.bing.com/th/id/OIP.Dp4wVVs4gsgJ1vd2YU4RNgHaFC?rs=1&pid=ImgDetMain);
+background-size: cover;}
 .atua{background: url(https://th.bing.com/th/id/OIP.Dp4wVVs4gsgJ1vd2YU4RNgHaFC?rs=1&pid=ImgDetMain);
 background-size: cover;}
 
