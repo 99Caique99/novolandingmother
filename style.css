@@ -114,7 +114,7 @@ p {
 #intro{    background: url(https://images.pexels.com/photos/8385738/pexels-photo-8385738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);}
 .section {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100vh;  
     padding: 50px 20px;
     text-align: center;
     display: flex;
@@ -198,10 +198,226 @@ p {
     color: #333;
     margin-bottom: 20px;
 }
-#historia{background: url(https://th.bing.com/th/id/OIP.Dp4wVVs4gsgJ1vd2YU4RNgHaFC?rs=1&pid=ImgDetMain);
-background-size: cover;}
-.atua{background: url(https://th.bing.com/th/id/OIP.Dp4wVVs4gsgJ1vd2YU4RNgHaFC?rs=1&pid=ImgDetMain);
-background-size: cover;}
+#historia {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Fundo branco suave com gradiente leve */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+#historia::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.20;
+    background: url('https://images.unsplash.com/photo-1611517976630-163467322778?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: 350px;
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#historia::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    /* Overlay quase transparente só para leveza */
+    background: linear-gradient(120deg, rgba(200,200,200,0.08) 0%, rgba(0,0,0,0.04) 100%);
+}
+#historia .historia-content {
+    /* ...existing code... */
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-size: 1.18rem;
+    color: #234;
+    letter-spacing: 0.02em;
+    line-height: 1.9;
+    font-weight: 500;
+    text-align: center;
+    background: rgba(255,255,255,0.97);
+    border-radius: 28px;
+    box-shadow: 0 8px 32px rgba(0,123,255,0.13), 0 2px 8px rgba(0,0,0,0.07);
+    padding: 48px 32px;
+    max-width: 700px;
+    width: 90vw;
+}
+
+#historia .historia-content p {
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-size: 1.25rem;
+    color: #1976d2;
+    font-weight: 500;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 8px #e3eafc;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+}
+
+#historia .historia-content h2 {
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-size: 2.3rem;
+    color: #007BFF;
+    margin-bottom: 20px;
+    text-shadow: 1px 2px 12px #b3e0ff;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+/* ...existing code... */
+/* ...existing code... */
+.atua {
+    position: relative;
+    background: url(https://images.unsplash.com/photo-1730804518415-75297e8d2a41?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) center center fixed;
+    background-size: cover;
+    border-radius: 22px;
+    padding: 56px 32px;
+    margin: 40px 0;
+    box-shadow: 0 12px 40px rgba(60,60,60,0.18), 0 2px 12px rgba(0,0,0,0.10);
+    overflow: hidden;
+    z-index: 1;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overlay escuro para ofuscar o fundo e dar contraste ao texto */
+.atua::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(40,40,40,0.55) 0%, rgba(0,0,0,0.35) 100%);
+    z-index: 1;
+    border-radius: 22px;
+    pointer-events: none;
+    transition: background 0.4s;
+}
+
+/* Efeito de brilho suave no topo */
+.atua::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 60px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 100%);
+    z-index: 2;
+    border-radius: 22px 22px 0 0;
+    pointer-events: none;
+}
+
+/* Conteúdo da seção atua */
+.atua > * {
+    position: relative;
+    z-index: 3;
+}
+
+/* Título */
+.atua h2 {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 16px #000, 0 2px 8px #25D366;
+    background: linear-gradient(90deg, #25D366 0%, #43ea8e 50%, #1976d2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: atuaShine 3s linear infinite;
+}
+
+@keyframes atuaShine {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Parágrafos */
+.atua p, .atua li, .atua strong, .atua span {
+    color: #fff;
+    font-size: 1.18rem;
+    line-height: 1.8;
+    text-shadow: 0 2px 8px #000;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.atua p strong, .atua li strong {
+    color: #25D366;
+    font-weight: bold;
+    text-shadow: 0 2px 8px #1976d2;
+}
+
+.atua p span, .atua li span {
+    color: #ffe082;
+    font-weight: bold;
+    text-shadow: 0 2px 8px #1976d2;
+}
+
+/* Lista estilizada dentro da atua */
+.atua ul {
+    margin: 18px 0 0 0;
+    padding-left: 24px;
+}
+
+.atua ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.atua ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #25D366;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 0 2px 8px #000;
+}
+.atua,
+.atua * {
+    color: #fff !important;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .atua {
+        padding: 32px 10px;
+        min-height: 220px;
+    }
+    .atua h2 {
+        font-size: 1.4rem;
+    }
+    .atua p, .atua li {
+        font-size: 1rem;
+    }   
+}
+
+@media (max-width: 600px) {
+    .atua {
+        padding: 18px 4px;
+        border-radius: 12px;
+        min-height: 120px;
+    }
+    .atua h2 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    .atua p, .atua li {
+        font-size: 0.93rem;
+    }
+}   
 
 /* Ajustando o texto "Como atua uma Psicopedagoga" */
 #grid-one p {
@@ -237,27 +453,149 @@ background-size: cover;}
 }
 
 /* Galeria */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    width: 100%;
-    justify-items: center;
-}
-
 .galeria img {
     width: 100%;
     max-width: 300px;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(33,150,243,0.18), 0 2px 8px rgba(0,0,0,0.10);
+    transition: 
+        transform 0.4s cubic-bezier(.25,.8,.25,1),
+        box-shadow 0.4s cubic-bezier(.25,.8,.25,1);
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .galeria img:hover {
-    transform: scale(1.05);
+    transform: scale(1.07) rotate(-1deg);
+    box-shadow: 0 16px 40px rgba(33,150,243,0.32), 0 4px 16px rgba(0,0,0,0.18);
 }
 
+/* Efeito de overlay de brilho ao passar o mouse */
+.galeria img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background: linear-gradient(120deg, rgba(255,255,255,0.12) 0%, rgba(33,150,243,0.08) 100%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.galeria img:hover::after {
+    opacity: 1;
+}.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.galeria img {
+    flex: 1 1 240px;
+    max-width: 240px;
+    min-width: 180px;
+    aspect-ratio: 1/1;
+    height: auto;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(33,150,243,0.18), 0 2px 12px rgba(0,0,0,0.10);
+    background: #f5f7fa;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 
+        transform 0.5s cubic-bezier(.25,.8,.25,1),
+        box-shadow 0.5s cubic-bezier(.25,.8,.25,1),
+        filter 0.5s;
+}
+
+/* Efeito: quando passar o mouse em uma imagem, as outras desfocam */
+.galeria:hover img {
+    filter: blur(2px) grayscale(0.3) brightness(0.9);
+    opacity: 0.7;
+    transition: filter 0.5s, opacity 0.5s;
+}
+
+.galeria img:hover {
+    transform: scale(1.09) rotate(-2deg);
+    box-shadow: 0 20px 60px 0 rgba(33,150,243,0.32), 0 8px 32px rgba(0,0,0,0.18);
+    filter: none !important;
+    opacity: 1 !important;
+    z-index: 2;
+}
+
+/* Overlay de brilho e efeito de luz circular */
+.galeria img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(33,150,243,0.13) 100%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.galeria img:hover::after {
+    opacity: 1;
+}
+
+.galeria img::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 80%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: width 0.5s, height 0.5s, opacity 0.5s;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.galeria img:hover::before {
+    width: 180%;
+    height: 180%;
+    opacity: 0.5;
+}
+
+/* Responsivo para tablets */
+@media (max-width: 900px) {
+    .galeria {
+        gap: 14px;
+    }
+    .galeria img {
+        max-width: 44vw;
+        min-width: 120px;
+    }
+}
+
+/* Responsivo para celulares */
+@media (max-width: 600px) {
+    .galeria {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .galeria img {
+        max-width: 95vw;
+        min-width: 100px;
+        flex-basis: 100%;
+    }
+}
 /* Links de Contato */
 #contato a {
     display: block;
